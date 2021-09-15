@@ -4,6 +4,7 @@
     <PostForm/>
     </div>
     <Post v-for="post in posts" :key="post.id" :post="post"/>
+    <div v-observe-visibility="visibilityChanged"></div>
   </div>
 </template>
 
@@ -15,6 +16,11 @@
 
     export default {
         components: {Post, PostForm, AppNav},
+        data(){
+            return{
+                page:1
+            }
+        },
         computed:{
           ...mapGetters({
               posts:'posts/posts'
@@ -22,8 +28,17 @@
         },
         methods:{
             ...mapActions({
-                getPosts:'posts/getPosts'
-            })
+                getPosts:'posts/getPosts',
+                getMorePosts:'posts/getMorePosts'
+            }),
+            visibilityChanged(isVisible){
+                if (!isVisible){
+                    return
+                }
+                ++this.page
+                console.log(this.page)
+                this.getMorePosts(this.page)
+            }
         },
         mounted() {
             this.getPosts()
