@@ -9,7 +9,7 @@
       </div>
     </div>
     <div>
-      <Like/>
+      <Like :post="post"/>
     </div>
   </div>
 </template>

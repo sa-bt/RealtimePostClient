@@ -3,6 +3,7 @@
     <div class="border-b pb-6">
     <PostForm/>
     </div>
+
     <Post v-for="post in posts" :key="post.id" :post="post"/>
     <div v-observe-visibility="visibilityChanged"></div>
   </div>
@@ -23,7 +24,8 @@
         },
         computed:{
           ...mapGetters({
-              posts:'posts/posts'
+              posts:'posts/posts',
+              likes:'posts/likes',
           })
         },
         methods:{
@@ -36,7 +38,6 @@
                     return
                 }
                 ++this.page
-                console.log(this.page)
                 this.getMorePosts(this.page)
             }
         },
