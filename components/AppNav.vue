@@ -6,7 +6,9 @@
         <li>
           <nuxt-link :to="{name:'login'}" class="text-indigo-500 mx-3">Login</nuxt-link>
         </li>
-        <li><a href="" class="text-indigo-500 mx-3">Register</a></li>
+        <li>
+          <nuxt-link :to="{name:'register'}" class="text-indigo-500 mx-3">Register</nuxt-link>
+        </li>
       </template>
 
       <template v-if="$auth.loggedIn">

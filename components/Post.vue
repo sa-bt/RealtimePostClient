@@ -4,7 +4,9 @@
       <img :src="post.user.avatar" :alt="post.user.name" class="w-12 h-12 rounded-full mr-4">
       <div>
         <span class="font-semibold">{{post.user.name}}</span>
-        <span class="text-sm text-gray-500">{{post.created_at}}</span>
+        <span class="text-sm text-gray-500">
+          <FromNow :timestamp="post.created_at"/>
+        </span>
         <p>{{post.body}}</p>
       </div>
     </div>
@@ -16,9 +18,10 @@
 
 <script>
     import Like from '../components/Like'
+    import FromNow from "./FromNow";
 
     export default {
-        components: {Like},
+        components: {FromNow, Like},
         name: "Post",
         props:{
           post:{
