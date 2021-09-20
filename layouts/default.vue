@@ -1,15 +1,15 @@
 <template>
-    <div class="container max-w-3xl mx-auto px-6 mt-10">
-      <AppNav/>
+    <div class="container  mx-auto px-6 mt-10">
+      <Navbar/>
       <Nuxt/>
     </div>
 </template>
 
 <script>
-    import AppNav from "../components/AppNav";
+    import Navbar from "../components/Navbar";
     export default {
         name: "default",
-        components: {AppNav}
+        components: {Navbar}
     }
 </script>
 

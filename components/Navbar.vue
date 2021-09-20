@@ -1,6 +1,7 @@
 <template>
   <nav class="flex item-center justify-between mb-6 -mx-3">
-    <nuxt-link :to="{name:'index'}" class="text-indigo-500 mx-3"> Home</nuxt-link>
+    <nuxt-link :to="{name:'index'}" class="text-indigo-500 "> Home</nuxt-link>
+    <nuxt-link :to="{name:'tasks'}" class="text-indigo-500 "> Tasks</nuxt-link>
     <ul class="flex item-center">
       <template v-if="!$auth.loggedIn">
         <li>
@@ -21,7 +22,7 @@
 
 <script>
     export default {
-        name: "AppNav",
+        name: "Navbar",
         methods: {
             async logout() {
                 await this.$auth.logout()

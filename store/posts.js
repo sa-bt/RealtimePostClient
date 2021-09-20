@@ -50,7 +50,6 @@ export default {
     },
 
     async createPost({commit}, post) {
-      console.log(post)
       let prependPost = await this.$axios.post('api/posts', post)
       commit('PREPEND_POST', prependPost.data.data)
       commit('APPEND_LIKES', prependPost.data.likes)

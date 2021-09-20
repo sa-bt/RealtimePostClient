@@ -10,13 +10,12 @@
 </template>
 
 <script>
-    import AppNav from "../components/AppNav";
     import PostForm from "../components/PostForm";
     import Post from "../components/Post";
     import {mapActions, mapGetters, mapMutations} from 'vuex'
 
     export default {
-        components: {Post, PostForm, AppNav},
+        components: {Post, PostForm},
         data() {
             return {
                 page: 1
