@@ -1,8 +1,11 @@
 <template>
 
-  <div class="bg-white shadow-sm rounded p-6 border border-gray-300">
+  <div class="bg-white shadow-sm rounded p-6 border border-gray-300" >
     <div class="border-b pb-6">
 
+      <div class=" flex justify-center items-center" v-if="loading">
+        <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"></div>
+      </div>
       <!-- component -->
       <div class=" flex  flex-col  md:flex-row justify-center  flex-wrap gap-3 mt-10  " >
         <Task v-for="task in tasks" :key="task.id" :task="task"/>
@@ -24,6 +27,7 @@
         data() {
             return {
                 page: 1,
+                loading:true
             }
         },
         computed: {
@@ -42,8 +46,9 @@
             }),
 
         },
-        mounted() {
-            this.getTasks()
+         mounted() {
+
+              this.getTasks()
         }
     }
 </script>

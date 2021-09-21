@@ -1,11 +1,11 @@
 <template>
   <div class="" v-if="task.completed == 1">
     <div
-      class="bg-white max-w-xs mx-auto rounded-2xl  border-b-4 border-green-500 overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105 cursor-pointer">
+      class="bg-white max-w-xs mx-auto rounded-2xl  border-b-4 border-green-500 overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105 cursor-pointer" style="width: 450px; height: 350px">
       <div class="h-20 bg-green-500 flex items-center ">
         <h1 class="text-white ml-4 border-2 py-2 px-4 rounded-full">2</h1>
         <p class=" text-white text-base ml-4 uppercase">
-          Title
+          {{task.id}}
         </p>
       </div>
       <p class="py-6 px-6 text-lg tracking-wide text-center">Description Goes Here</p>
@@ -20,11 +20,11 @@
   </div>
   <div class="" v-else>
     <div
-      class="bg-white max-w-xs mx-auto rounded-2xl  border-b-4 border-red-500 overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105 cursor-pointer">
+      class="bg-white max-w-xs mx-auto rounded-2xl  border-b-4 border-red-500 overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105 cursor-pointer" style="width: 450px; height: 350px">
       <div class="h-20 bg-red-500 flex items-center ">
         <h1 class="text-white ml-4 border-2 py-2 px-4 rounded-full">3</h1>
         <p class=" text-white text-base ml-4 uppercase">
-          Title
+          {{task.id}}
         </p>
       </div>
       <p class="py-6  px-6 text-lg tracking-wide text-center">{{task.title}}</p>
