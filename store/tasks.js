@@ -25,6 +25,11 @@ export default {
       state.tasks.splice(index, 1, data)
 
     },
+    DELETE_TASK(state, data) {
+      const index = state.tasks.findIndex(task => task.id == data.id)
+      state.tasks.splice(index, 1)
+
+    },
   },
 
 
@@ -69,7 +74,22 @@ export default {
       let task = await this.$axios.post(`api/tasks/${data.id}/done`)
       commit('CHANGE_STATE_TASK', task.data)
       Swal.fire({
-        title: 'Are you sure',
+        title: 'task is done',
+        icon: 'success',
+        position:"top",
+        timerProgressBar:true,
+        timer:3000,
+        showConfirmButton:false,
+        toast:true
+      })
+    }
+    ,
+
+    async deleteTask({commit}, data) {
+      let task = await this.$axios.delete(`api/tasks/${data.id}`)
+      commit('DELETE_TASK', data)
+      Swal.fire({
+        title: 'task is done',
         icon: 'success',
         position:"top",
         timerProgressBar:true,
