@@ -89,7 +89,7 @@ export default {
       let task = await this.$axios.delete(`api/tasks/${data.id}`)
       commit('DELETE_TASK', data)
       Swal.fire({
-        title: 'task is done',
+        title: 'task is changed',
         icon: 'success',
         position:"top",
         timerProgressBar:true,
