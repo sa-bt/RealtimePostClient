@@ -1,15 +1,17 @@
 <template>
-    <div class="container  mx-auto px-6 mt-10">
-      <Navbar/>
-      <Nuxt/>
-    </div>
+  <div class="container  mx-auto px-6 mt-10">
+    <Navbar/>
+    <Nuxt/>
+  </div>
 </template>
 
 <script>
     import Navbar from "../components/Navbar";
+    import {mapMutations} from 'vuex'
+
     export default {
         name: "default",
-        components: {Navbar}
+        components: {Navbar},
     }
 </script>
 

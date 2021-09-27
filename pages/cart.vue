@@ -16,7 +16,7 @@
 
         <CartItem v-for="item in cart" :key="item.id" :product="item"/>
 
-
+        <button @click="clear()" class="h-10 px-4 text-center text-white bg-indigo-500 font-medium rounded font-semibold">Clear Basket</button >
       </div>
 
 
@@ -24,7 +24,7 @@
         <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
         <div class="flex justify-between mt-10 mb-5">
           <span class="font-semibold text-sm uppercase">Items 3</span>
-          <span class="font-semibold text-sm">590$</span>
+          <span class="font-semibold text-sm">{{totalAmount}}$</span>
         </div>
         <div>
           <label class="font-medium inline-block mb-3 text-sm uppercase">Shipping</label>
@@ -55,7 +55,7 @@
 
 <script>
     import CartItem from "../components/CartItem";
-    import {mapGetters} from "vuex";
+    import {mapGetters,mapActions} from "vuex";
 
     export default {
         name: "cart",
@@ -63,8 +63,18 @@
         computed: {
             ...mapGetters({
                 count:'cart/count',
-                cart:'cart/getCart'
-            })
+                cart:'cart/getCart',
+                totalAmount:'cart/totalAmount',
+            }),
+
+        },
+        methods:{
+            ...mapActions({
+                clearBasket: 'cart/clear',
+            }),
+            clear() {
+                this.clearBasket()
+            }
         }
     }
 </script>

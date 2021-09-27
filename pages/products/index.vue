@@ -20,10 +20,11 @@
 
 <script>
     import {mapActions, mapGetters, mapMutations} from 'vuex'
-import Product from "../../components/Product";
+    import Product from "../../components/Product";
+
     export default {
         components: {
-Product
+            Product
         },
         data() {
             return {
@@ -43,6 +44,7 @@ Product
         },
         methods: {
             ...mapMutations({
+                setCart: 'cart/SET_CART'
             }),
             ...mapActions({
                 getProducts: 'products/getProducts',
@@ -55,7 +57,6 @@ Product
         },
 
         mounted() {
-
             this.getProducts()
         },
 
