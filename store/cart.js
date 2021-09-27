@@ -9,13 +9,17 @@ export default {
   },
 
   getters: {
-    carts(state) {
-      return [...state.prependedPosts, ...state.carts]
+    count(state) {
+      return state.cart.length;
+    },
+    getCart(state) {
+      return state.cart;
     },
 
   },
 
   mutations: {
+
     ADD_TO_CART(state, product) {
       const item = state.cart.find(p => p.id == product.id);
       if (!item) {
@@ -28,8 +32,8 @@ export default {
       }
       localStorage.setItem('cart', JSON.stringify(state.cart))
     },
+
     SET_CART(state) {
-      console.log('hire')
       state.cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
     }
 

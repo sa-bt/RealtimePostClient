@@ -11,6 +11,7 @@
         <li>
           <nuxt-link :to="{name:'register'}" class="text-indigo-500 mx-3">Register</nuxt-link>
         </li>
+        <CartNavbar/>
       </template>
 
       <template v-if="$auth.loggedIn">
@@ -22,8 +23,10 @@
 </template>
 
 <script>
+    import CartNavbar from "./CartNavbar";
     export default {
         name: "Navbar",
+        components: {CartNavbar},
         methods: {
             async logout() {
                 await this.$auth.logout()
