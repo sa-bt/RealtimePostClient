@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+@import "../font/font.css";
+}
 
 body{
   @apply bg-gray-200
