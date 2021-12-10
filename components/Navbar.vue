@@ -9,7 +9,8 @@
           <nuxt-link :to="{name:'login'}" class="text-indigo-500 mx-3">ورود</nuxt-link>
         </li>
         <li>
-          <nuxt-link :to="{name:'register'}" class="text-indigo-500 mx-3">ثبت نام</nuxt-link>
+          <nuxt-link :to="{name:'register'}" class="text-indigo-500 mx">ثبت نام</nuxt-link>
+          <p class="text-"></p>
         </li>
         <CartNavbar/>
       </template>
